@@ -12,15 +12,17 @@ namespace Exc_11
     {
         static void Main(string[] args)
         {
-            int distance = int.Parse(Console.ReadLine());
-            int time_hours = int.Parse(Console.ReadLine());
-            int time_minutes = int.Parse(Console.ReadLine());
-            int time_seconds = int.Parse(Console.ReadLine());
-            TimeSpan time = new TimeSpan(time_hours, time_minutes, time_seconds);
-            float speed_mps = (float)(distance / time.TotalSeconds);
-            float speed_kmph = (float)((distance / 1000) / time.TotalHours);
-            float speed_mph = (float)((distance / 1609d) / time.TotalHours);
-            Console.WriteLine($"{speed_mps:f6}\n{speed_kmph:f6}\n{speed_mph:f6}");
+            float distance = float.Parse(Console.ReadLine());
+            float time_hours = float.Parse(Console.ReadLine());
+            float time_minutes = float.Parse(Console.ReadLine());
+            float time_seconds = float.Parse(Console.ReadLine());
+
+            float time_total_seconds = (time_hours * 60 * 60) + (time_minutes * 60) + time_seconds;
+
+            float speed_mps = distance /time_total_seconds;
+            float speed_kmph = (distance /1000f) / (time_total_seconds/3600f);
+            float speed_mph = (distance / 1609.0f) / (time_hours + time_minutes/ 60.0f + time_seconds/ 3600.0f);
+            Console.WriteLine($"{speed_mps}\n{speed_kmph}\n{speed_mph}");
         }
     }
 }
