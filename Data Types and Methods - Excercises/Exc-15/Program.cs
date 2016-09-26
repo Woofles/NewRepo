@@ -29,7 +29,7 @@ namespace Exc_15
         static void Main(string[] args)
         {
             int num_upperLimit = int.Parse(Console.ReadLine());
-            for (int num_toCheck = 100000; num_toCheck <= num_upperLimit; num_toCheck++)
+            for (int num_toCheck = 2; num_toCheck <= num_upperLimit; num_toCheck++)
             {
                 bool num_isPrime = true;
                 for (int factor = 2; factor <= Math.Sqrt(num_toCheck); factor++)
@@ -40,7 +40,7 @@ namespace Exc_15
                         break;
                     }
                 }
-                Console.WriteLine($"{num_toCheck} is prime -> {num_isPrime}");
+                Console.WriteLine($"{num_toCheck} -> {num_isPrime}");
             }
         }
     }
