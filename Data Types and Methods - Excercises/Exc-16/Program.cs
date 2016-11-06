@@ -12,10 +12,10 @@ namespace Exc_16
     {
         static void Main(string[] args)
         {
-            float numA = float.Parse(Console.ReadLine());
-            float numB = float.Parse(Console.ReadLine());
+            double numA = double.Parse(Console.ReadLine());
+            double numB = double.Parse(Console.ReadLine());
             decimal diff_AB = (decimal)Math.Abs(numA - numB);
-            decimal eps = 0.000005m;
+            decimal eps = 0.000001m;
             Console.WriteLine(diff_AB < eps); //Because why not
         }
     }
